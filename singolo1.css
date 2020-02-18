@@ -1,7 +1,6 @@
 /* Reset CSS */
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -12,6 +11,15 @@ html,
 body {
   font-family: Lato, sans-serif;
 }
+
+/* Utility Classes */
+
+.container {
+  margin: auto;
+  max-width: 1020px;
+}
+
+/* Header Elements */
 
 nav {
   display: flex;
@@ -65,9 +73,19 @@ nav ul a:hover {
 nav ul a.current {
   color: #f06c64;
 }
-/* Utility Classes */
 
-.container {
-  margin: auto;
-  max-width: 1020px;
+/* Slider Section */
+
+section#slider {
+  height: 600px;
+  background-color: #f06c64;
+  border-bottom: 15px solid #ea676b;
+}
+
+/* Services Section */
+
+section#services {
+  height: 495px;
+  background-color: #f2f2f2;
+  border-bottom: 6px solid #ffffff;
 }
