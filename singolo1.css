@@ -80,6 +80,59 @@ section#slider {
   height: 600px;
   background-color: #f06c64;
   border-bottom: 15px solid #ea676b;
+  position: relative;
+}
+
+.chev {
+  display: inline-block;
+  width: 16px;
+  height: 27px;
+  background-size: cover;
+  cursor: pointer;
+  position: absolute;
+  top: 282px;
+}
+
+.chev-left {
+  background-image: url(assets/img/chev-left.svg);
+  left: 40px;
+}
+
+.chev-left:active {
+  background-image: url(assets/img/chev-left-hover.svg);
+}
+
+.chev-left:hover {
+  opacity: 0.75;
+}
+
+.chev-right {
+  background-image: url(assets/img/chev-right.svg);
+  right: 40px;
+}
+
+.chev-right:active {
+  background-image: url(assets/img/chev-right-hover.svg);
+}
+
+.chev-right:hover {
+  opacity: 0.75;
+}
+
+.iphone-vertical {
+  position: absolute;
+  top: 53px;
+  left: 111px;
+  border-radius: 27px;
+  box-shadow: 25px 25px 5px 0px #ce5d56;
+}
+
+.iphone-horizontal {
+  position: absolute;
+  top: 174px;
+  left: 425px;
+  border-radius: 27px;
+  box-shadow: 25px 25px 5px 0px #ce5d56;
 }
 
 /* Services Section */
