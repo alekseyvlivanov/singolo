@@ -1,0 +1,45 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Styling */
+
+body {
+  font-family: Lato, sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1020px;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f06c64;
+}
+
+/* Portfolio Section */
+
+#portfolio {
+  /* height: 870px; */
+  background-color: #2d303a;
+  border-bottom: 6px solid #323746;
+}
+
+/* About Section */
+
+#about {
+  /* height: 728px; */
+  background-color: #f2f2f2;
+  border-bottom: 6px solid #ffffff;
+}
