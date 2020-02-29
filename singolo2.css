@@ -37,13 +37,13 @@ a:hover {
 }
 
 .portfolio-title {
-  padding: 68px 40px 0 40px;
+  padding: 69px 40px 0 41px;
 }
 
 .portfolio-title h2 {
   font-size: 30px;
   line-height: 18px;
-  /* letter-spacing: -0.008em; */
+  letter-spacing: -0.008em;
   color: #666d89;
   font-weight: 900;
 }
@@ -51,39 +51,51 @@ a:hover {
 .portfolio-title p {
   font-size: 18px;
   line-height: 30px;
+  letter-spacing: -0.0008em;
   color: #767e9e;
   font-weight: 300;
   padding-top: 27px;
 }
 
 .portfolio-title .tags {
-  padding-top: 18px;
+  padding-top: 10px;
 }
 
-.portfolio-title a {
+.portfolio-title .tag {
+  cursor: pointer;
   font-size: 12px;
   line-height: 12px;
+  letter-spacing: 0.001em;
   color: #767e9e;
   font-weight: 400;
   border-radius: 5px;
   background-color: #2d303a;
   border: 1px solid #666d89;
-  padding: 5px;
-  margin-right: 8px;
+  padding: 2px 6px 3px 6px;
+  margin-right: 7px;
+}
+
+.portfolio-title .tag:nth-child(2) {
+  padding-left: 7px;
+}
+
+.portfolio-title .tag:nth-child(4) {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .portfolio-title .active,
-.portfolio-title a:hover {
+.portfolio-title .tag:hover {
   color: #dedede;
   border: 1px solid #c5c5c5;
 }
 
 .portfolio-grid {
   display: grid;
-  column-gap: 12px;
-  row-gap: 16px;
+  column-gap: 13px;
+  row-gap: 17px;
   grid-template-columns: repeat(4, 1fr);
-  padding: 18px 40px 0 40px;
+  padding: 23px 37px 0 36px;
 }
 
 .portfolio-item {
@@ -110,7 +122,7 @@ a:hover {
 .about-title h2 {
   font-size: 30px;
   line-height: 18px;
-  /* letter-spacing: -0.008em; */
+  letter-spacing: -0.008em;
   color: #666d89;
   font-weight: 900;
 }
@@ -118,6 +130,7 @@ a:hover {
 .about-title p {
   font-size: 18px;
   line-height: 30px;
+  text-align: justify;
   color: #767e9e;
   font-weight: 300;
   padding-top: 27px;
@@ -125,7 +138,7 @@ a:hover {
 
 .about-grid {
   display: grid;
-  column-gap: 12px;
+  column-gap: 20px;
   grid-template-columns: repeat(3, 1fr);
   padding: 46px 40px 0 40px;
 }
@@ -138,32 +151,35 @@ a:hover {
 .about-item-text h3 {
   font-size: 18px;
   line-height: 18px;
+  letter-spacing: -0.01em;
   color: #666d89;
   font-weight: 900;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding-top: 18px;
+  padding-top: 13px;
 }
 
 .about-item-text p {
   font-size: 12px;
   line-height: 22px;
+  letter-spacing: -0.005em;
+  text-align: justify;
   color: #767e9e;
   font-weight: 400;
   padding-top: 10px;
 }
 
 .about-item-icons {
-  padding-top: 24px;
+  padding-top: 22px;
 }
 
 .icon {
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
   background-size: cover;
-  padding-right: 10px;
+  margin-right: 2px;
 }
 
 .icon-facebook {
