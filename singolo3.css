@@ -188,3 +188,58 @@ footer {
   height: 76px;
   background-color: #2d303a;
 }
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 40px;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666d89;
+  font-weight: 400;
+}
+
+.icon {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-size: cover;
+  margin-right: 2px;
+}
+
+.icon-facebook {
+  background-image: url('assets/img/facebook.png');
+}
+
+.icon-facebook:hover {
+  background-image: url('assets/img/facebook-hover.png');
+}
+
+.icon-google {
+  background-image: url('assets/img/google.png');
+}
+
+.icon-google:hover {
+  background-image: url('assets/img/google-hover.png');
+}
+
+.icon-twitter {
+  background-image: url('assets/img/twitter.png');
+}
+
+.icon-twitter:hover {
+  background-image: url('assets/img/twitter-hover.png');
+}
+
+.icon-linkedin {
+  background-image: url('assets/img/linkedin.png');
+}
+
+.icon-linkedin:hover {
+  background-image: url('assets/img/linkedin-hover.png');
+}
