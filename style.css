@@ -41,7 +41,7 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 40px;
+  padding: 0 39px 0 40px;
 }
 
 .logo {
@@ -101,7 +101,7 @@ header {
 
 .chev-left {
   background-image: url(assets/img/chev-left.svg);
-  left: 40px;
+  left: 42px;
 }
 
 .chev-left:active {
@@ -128,7 +128,7 @@ header {
 .iphone-vertical {
   position: absolute;
   top: 53px;
-  left: 111px;
+  left: 112px;
   border-radius: 27px;
   box-shadow: 25px 25px 5px 0px #ce5d56;
 }
@@ -180,7 +180,7 @@ header {
 .services-item {
   display: flex;
   padding-top: 6px;
-  padding-bottom: 23px;
+  padding-bottom: 24px;
 }
 
 .services-logo {
@@ -195,7 +195,6 @@ header {
 .services-text h3 {
   font-size: 18px;
   line-height: 18px;
-  letter-spacing: -0.008em;
   color: #666d89;
   font-weight: 900;
 }
@@ -203,7 +202,6 @@ header {
 .services-text p {
   font-size: 12px;
   line-height: 22px;
-  letter-spacing: 0.002em;
   color: #767e9e;
   font-weight: 400;
   padding-top: 9px;
@@ -213,7 +211,7 @@ header {
 /* Portfolio Section */
 
 #portfolio {
-  height: 870px;
+  height: 869px;
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
 }
@@ -236,7 +234,7 @@ header {
   letter-spacing: -0.0008em;
   color: #767e9e;
   font-weight: 300;
-  padding-top: 27px;
+  padding-top: 26px;
 }
 
 .portfolio-title .tags {
@@ -292,7 +290,7 @@ header {
 /* About Section */
 
 #about {
-  height: 728px;
+  height: 734px;
   background-color: #f2f2f2;
   border-bottom: 6px solid #ffffff;
 }
@@ -353,7 +351,7 @@ header {
 }
 
 .about-item-icons {
-  padding-top: 22px;
+  padding-top: 21px;
 }
 
 .icon {
@@ -427,7 +425,7 @@ header {
 
 .contact-content {
   display: flex;
-  padding: 45px 0 0 40px;
+  padding: 44px 0 0 40px;
 }
 
 .contact-form {
@@ -441,7 +439,7 @@ header {
   border-radius: 5px;
   font-size: 12px;
   line-height: 22px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: #f0d8d9;
   background: #d6564f;
   font-weight: 300;
@@ -456,14 +454,14 @@ header {
 }
 
 .contact-form textarea {
-  height: 200px;
+  height: 202px;
   width: 100%;
-  padding: 6px 16px;
+  padding: 7px 16px;
   border-radius: 5px;
   font-size: 12px;
   line-height: 22px;
   letter-spacing: -0.1em;
-  word-spacing: -0.1em;
+  /* word-spacing: -0.1em; */
   color: #f0d8d9;
   background: #d6564f;
   font-weight: 300;
@@ -511,7 +509,7 @@ header {
   letter-spacing: -0.03em;
   color: #f0d8d9;
   font-weight: 400;
-  padding-top: 9px;
+  padding-top: 10px;
   text-align: justify;
 }
 
@@ -523,7 +521,7 @@ header {
   line-height: 12px;
   color: #f0d8d9;
   font-weight: 400;
-  padding-top: 13px;
+  padding-top: 15px;
 }
 
 .contact-info-links a {
@@ -538,10 +536,10 @@ header {
 .contact-info-links__icon::before {
   display: inline-block;
   width: 11px;
-  height: 11px;
+  height: 10px;
   background-size: cover;
   content: '';
-  margin: 10px 10px 0 0;
+  margin: 9px 11px 0 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -589,6 +587,7 @@ footer {
 .footer-copyright {
   font-size: 12px;
   line-height: 18px;
+  letter-spacing: -0.01em;
   color: #666d89;
   font-weight: 400;
 }
