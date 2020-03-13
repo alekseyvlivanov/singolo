@@ -24,6 +24,7 @@ a {
   text-decoration: none;
 }
 
+a.active,
 a:hover {
   color: #f06c64;
 }
@@ -45,17 +46,15 @@ header {
 }
 
 .logo {
+  color: #ffffff;
   letter-spacing: -0.02em;
-}
-
-.logo a {
   font-size: 25px;
   line-height: 6px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.logo a::after {
+.logo::after {
   content: '*';
   color: #f06c64;
 }
