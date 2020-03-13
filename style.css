@@ -24,11 +24,6 @@ a {
   text-decoration: none;
 }
 
-a.active,
-a:hover {
-  color: #f06c64;
-}
-
 /* Header */
 
 header {
@@ -73,6 +68,11 @@ header {
 
 .menu-item {
   letter-spacing: -0.01em;
+}
+
+.menu-item a.active,
+.menu-item a:hover {
+  color: #f06c64;
 }
 
 .menu-dot {
@@ -287,6 +287,16 @@ header {
 
 .portfolio-item:nth-child(n + 13) {
   display: none;
+}
+
+.portfolio-item img {
+  cursor: pointer;
+}
+
+.portfolio-item img.active,
+.portfolio-item img:hover {
+  border: 5px solid #f06c64;
+  margin: -5px;
 }
 
 /* About Section */
