@@ -10,7 +10,7 @@
 
   <body>
     <div class="container">
-      <header id="home">
+      <header id="header">
         <nav id="navbar">
           <h1 class="logo">Singolo</h1>
           <ul class="menu">
@@ -292,11 +292,7 @@
           </p>
         </div>
         <div class="contact-content">
-          <form
-            onsubmit="alert('Your opinion is very important for us!')"
-            name="contact"
-            class="contact-form"
-          >
+          <form id="contact-form" name="contact" class="contact-form">
             <input
               type="text"
               name="name"
@@ -309,12 +305,20 @@
               placeholder="Email (Required)"
               required
             />
-            <input type="text" name="subject" placeholder="Subject" />
+            <input
+              id="contact-subject"
+              type="text"
+              name="subject"
+              placeholder="Subject"
+            />
             <textarea
+              id="contact-message"
               name="message"
               placeholder="Describe your project in detail..."
             ></textarea>
-            <button type="submit" name="submit">SUBMIT</button>
+            <button id="contact-button" type="submit" name="submit">
+              SUBMIT
+            </button>
           </form>
 
           <div class="contact-info">
@@ -357,6 +361,15 @@
           </div>
         </div>
       </footer>
+    </div>
+
+    <div id="info-block">
+      <div id="info-message">
+        <p class="modal-title">Письмо отправлено</p>
+        <p id="info-subject" class="modal-text"></p>
+        <p id="info-text" class="modal-text"></p>
+        <button id="ok-button">OK</button>
+      </div>
     </div>
 
     <script src="script.js"></script>
