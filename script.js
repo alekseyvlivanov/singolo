@@ -45,19 +45,21 @@ const iphoneHorizontalBlack = document.getElementById(
   'iphone-horizontal-black',
 );
 
-iphoneVertical.addEventListener(
-  'click',
-  () =>
-    (iphoneVerticalBlack.style.display =
-      iphoneVerticalBlack.style.display === 'none' ? 'block' : 'none'),
-);
+iphoneVertical.addEventListener('click', () => {
+  if (iphoneVerticalBlack.style.display === 'block') {
+    iphoneVerticalBlack.style.display = 'none';
+  } else {
+    iphoneVerticalBlack.style.display = 'block';
+  }
+});
 
-iphoneHorizontal.addEventListener(
-  'click',
-  () =>
-    (iphoneHorizontalBlack.style.display =
-      iphoneHorizontalBlack.style.display === 'none' ? 'block' : 'none'),
-);
+iphoneHorizontal.addEventListener('click', () => {
+  if (iphoneHorizontalBlack.style.display === 'block') {
+    iphoneHorizontalBlack.style.display = 'none';
+  } else {
+    iphoneHorizontalBlack.style.display = 'block';
+  }
+});
 
 // Portfolio. Взаимодействие с картинками
 const portfolio = document.querySelector('.portfolio-grid');
