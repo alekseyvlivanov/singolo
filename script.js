@@ -69,6 +69,21 @@ portfolio.addEventListener('click', event => {
   event.target.classList.add('active');
 });
 
+// Portfolio. Переключение табов
+const tags = document.getElementById('tags');
+const portfolioItems = portfolio.getElementsByClassName('portfolio-item');
+
+tags.addEventListener('click', event => {
+  tags.querySelectorAll('.tag').forEach(el => el.classList.remove('active'));
+  event.target.classList.add('active');
+
+  for (const portfolioItem of portfolioItems) {
+    portfolioItem.style.order = Math.floor(
+      Math.random() * portfolioItems.length,
+    );
+  }
+});
+
 // Get a quote
 const contactForm = document.getElementById('contact-form');
 

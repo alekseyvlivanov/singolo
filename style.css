@@ -332,6 +332,7 @@ a {
 .portfolio-item {
   align-self: center;
   justify-self: center;
+  order: 1;
 }
 
 .portfolio-item:nth-child(n + 13) {
