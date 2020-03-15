@@ -10,12 +10,14 @@
 
   <body>
     <div class="container">
-      <header id="home">
+      <div id="home"></div>
+
+      <header id="header">
         <nav id="navbar">
-          <h1 class="logo"><a href="#home">Singolo</a></h1>
+          <h1 class="logo">Singolo</h1>
           <ul class="menu">
             <li class="menu-item">
-              <a href="#home">Home</a>
+              <a class="active" href="#home">Home</a>
             </li>
             <li class="menu-dot">&middot;</li>
             <li class="menu-item"><a href="#services">Services</a></li>
@@ -30,18 +32,29 @@
       </header>
 
       <section id="slider">
-        <span class="chev chev-left"></span>
-        <span class="chev chev-right"></span>
-        <img
-          class="iphone-vertical"
-          src="assets/img/iPhoneVertical.png"
-          alt="iphone-vertical"
-        />
-        <img
-          class="iphone-horizontal"
-          src="assets/img/iPhoneHorizontal.png"
-          alt="iphone-horizontal"
-        />
+        <span id="chev-left" class="chev chev-left"></span>
+        <span id="chev-right" class="chev chev-right"></span>
+        <div class="slide slide-1">
+          <div id="iphone-vertical">
+            <img
+              class="iphone-vertical"
+              src="assets/img/iPhoneVertical.png"
+              alt="iphone-vertical"
+            />
+            <div id="iphone-vertical-black"></div>
+          </div>
+          <div id="iphone-horizontal">
+            <img
+              class="iphone-horizontal"
+              src="assets/img/iPhoneHorizontal.png"
+              alt="iphone-horizontal"
+            />
+            <div id="iphone-horizontal-black"></div>
+          </div>
+        </div>
+        <div class="slide slide-2">
+          <img src="assets/img/Slide-2.png" alt="slide-2" />
+        </div>
       </section>
 
       <section id="services">
@@ -148,7 +161,7 @@
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
             eget lacinia odio sem nec elit.
           </p>
-          <div class="tags">
+          <div id="tags" class="tags">
             <span class="tag active">All</span>
             <span class="tag">Web Design</span>
             <span class="tag">Graphic Design</span>
@@ -292,11 +305,7 @@
           </p>
         </div>
         <div class="contact-content">
-          <form
-            onsubmit="alert('Your opinion is very important for us!')"
-            name="contact"
-            class="contact-form"
-          >
+          <form id="contact-form" name="contact" class="contact-form">
             <input
               type="text"
               name="name"
@@ -309,12 +318,20 @@
               placeholder="Email (Required)"
               required
             />
-            <input type="text" name="subject" placeholder="Subject" />
+            <input
+              id="contact-subject"
+              type="text"
+              name="subject"
+              placeholder="Subject"
+            />
             <textarea
+              id="contact-message"
               name="message"
               placeholder="Describe your project in detail..."
             ></textarea>
-            <button type="submit" name="submit">SUBMIT</button>
+            <button id="contact-button" type="submit" name="submit">
+              SUBMIT
+            </button>
           </form>
 
           <div class="contact-info">
@@ -358,5 +375,16 @@
         </div>
       </footer>
     </div>
+
+    <div id="info-block">
+      <div id="info-message">
+        <p class="modal-title">Письмо отправлено</p>
+        <p id="info-subject" class="modal-text"></p>
+        <p id="info-text" class="modal-text"></p>
+        <button id="ok-button">OK</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
