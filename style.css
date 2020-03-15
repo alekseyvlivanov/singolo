@@ -93,6 +93,7 @@ a {
 }
 
 .slide {
+  position: relative;
   width: 100%;
   height: 100%;
   display: none;
@@ -127,6 +128,7 @@ a {
 .chev-left {
   background-image: url(assets/img/chev-left.svg);
   left: 42px;
+  z-index: 1;
 }
 
 .chev-left:active {
@@ -140,6 +142,7 @@ a {
 .chev-right {
   background-image: url(assets/img/chev-right.svg);
   right: 40px;
+  z-index: 1;
 }
 
 .chev-right:active {
@@ -158,12 +161,32 @@ a {
   box-shadow: 25px 25px 5px 0px #ce5d56;
 }
 
+#iphone-vertical-black {
+  position: absolute;
+  top: 118px;
+  left: 126px;
+  width: 188px;
+  height: 333px;
+  background-color: #000000;
+  display: none;
+}
+
 .iphone-horizontal {
   position: absolute;
   top: 174px;
   left: 425px;
   border-radius: 27px;
   box-shadow: 25px 25px 5px 0px #ce5d56;
+}
+
+#iphone-horizontal-black {
+  position: absolute;
+  top: 188px;
+  left: 485px;
+  width: 333px;
+  height: 188px;
+  background-color: #000000;
+  display: none;
 }
 
 /* Services Section */

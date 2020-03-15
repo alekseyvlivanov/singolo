@@ -36,6 +36,29 @@ const chevRight = document.getElementById('chev-right');
 chevLeft.addEventListener('click', () => plusSlides(-1));
 chevRight.addEventListener('click', () => plusSlides(1));
 
+// Slider. Активация экранов телефонов
+const iphoneVertical = document.getElementById('iphone-vertical');
+const iphoneHorizontal = document.getElementById('iphone-horizontal');
+
+const iphoneVerticalBlack = document.getElementById('iphone-vertical-black');
+const iphoneHorizontalBlack = document.getElementById(
+  'iphone-horizontal-black',
+);
+
+iphoneVertical.addEventListener(
+  'click',
+  () =>
+    (iphoneVerticalBlack.style.display =
+      iphoneVerticalBlack.style.display === 'none' ? 'block' : 'none'),
+);
+
+iphoneHorizontal.addEventListener(
+  'click',
+  () =>
+    (iphoneHorizontalBlack.style.display =
+      iphoneHorizontalBlack.style.display === 'none' ? 'block' : 'none'),
+);
+
 // Portfolio. Взаимодействие с картинками
 const portfolio = document.querySelector('.portfolio-grid');
 
