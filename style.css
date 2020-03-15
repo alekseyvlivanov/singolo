@@ -97,6 +97,17 @@ a {
   width: 100%;
   height: 100%;
   display: none;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .slide-1 {
@@ -492,7 +503,8 @@ a {
 }
 
 .contact-form {
-  width: 619px;
+  width: 620px;
+  height: 373px;
 }
 
 .contact-form input,
@@ -517,18 +529,17 @@ a {
 }
 
 .contact-form textarea {
-  height: 202px;
+  height: 159px;
   width: 100%;
   padding: 7px 16px;
   border-radius: 5px;
   font-size: 12px;
   line-height: 22px;
   letter-spacing: -0.1em;
-  /* word-spacing: -0.1em; */
   color: #f0d8d9;
   background: #d6564f;
   font-weight: 300;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   border: none;
   outline: none;
   resize: none;
@@ -537,13 +548,13 @@ a {
 .contact-form button {
   font-family: Lato, sans-serif;
   border-radius: 5px;
-  width: 110px;
+  width: 136px;
   height: 38px;
-  font-size: 16px;
-  line-height: 38px;
+  font-size: 14px;
+  line-height: 17px;
   text-align: center;
-  color: #f0d8d9;
-  background: #d6564f;
+  color: #886a30;
+  background: #fbc65f;
   font-weight: 900;
   border: none;
   outline: none;
@@ -641,17 +652,9 @@ footer {
 .footer-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 100%;
   padding: 0 36px 0 41px;
-}
-
-.footer-copyright {
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: -0.01em;
-  color: #666d89;
-  font-weight: 400;
 }
 
 .footer-icons {
