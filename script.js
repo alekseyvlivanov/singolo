@@ -8,6 +8,34 @@ menu.addEventListener('click', event => {
   event.target.classList.add('active');
 });
 
+// Slider. Переключение слайдов
+const showSlides = n => {
+  const slides = document.getElementsByClassName('slide');
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+  slides[slideIndex - 1].style.display = 'block';
+};
+
+let slideIndex = 1;
+showSlides(1);
+
+const plusSlides = n => {
+  showSlides((slideIndex += n));
+};
+
+const chevLeft = document.getElementById('chev-left');
+const chevRight = document.getElementById('chev-right');
+
+chevLeft.addEventListener('click', () => plusSlides(-1));
+chevRight.addEventListener('click', () => plusSlides(1));
+
 // Portfolio. Взаимодействие с картинками
 const portfolio = document.querySelector('.portfolio-grid');
 
