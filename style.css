@@ -170,6 +170,7 @@ a {
   left: 112px;
   border-radius: 27px;
   box-shadow: 25px 25px 5px 0px #ce5d56;
+  cursor: pointer;
 }
 
 #iphone-vertical-black {
@@ -180,6 +181,7 @@ a {
   height: 333px;
   background-color: #000000;
   display: none;
+  cursor: pointer;
 }
 
 .iphone-horizontal {
@@ -188,6 +190,7 @@ a {
   left: 425px;
   border-radius: 27px;
   box-shadow: 25px 25px 5px 0px #ce5d56;
+  cursor: pointer;
 }
 
 #iphone-horizontal-black {
@@ -198,6 +201,7 @@ a {
   height: 188px;
   background-color: #000000;
   display: none;
+  cursor: pointer;
 }
 
 /* Services Section */
@@ -343,7 +347,6 @@ a {
 .portfolio-item {
   align-self: center;
   justify-self: center;
-  order: 1;
 }
 
 .portfolio-item:nth-child(n + 13) {

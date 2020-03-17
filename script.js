@@ -1,16 +1,16 @@
 // Header
-const menu = document.querySelector('.menu');
+const menuItems = document.querySelectorAll('.menu a');
 
-menu.addEventListener('click', event => {
-  menu
-    .querySelectorAll('.menu-item a')
-    .forEach(el => el.classList.remove('active'));
-  event.target.classList.add('active');
-});
+for (const menuItem of menuItems) {
+  menuItem.addEventListener('click', event => {
+    menuItems.forEach(el => el.classList.remove('active'));
+    event.target.classList.add('active');
+  });
+}
 
 // Slider. Переключение слайдов
 const showSlides = n => {
-  const slides = document.getElementsByClassName('slide');
+  const slides = document.querySelectorAll('.slide');
   if (n > slides.length) {
     slideIndex = 1;
   }
@@ -61,30 +61,31 @@ iphoneHorizontal.addEventListener('click', () => {
   }
 });
 
-// Portfolio. Взаимодействие с картинками
-const portfolio = document.querySelector('.portfolio-grid');
-
-portfolio.addEventListener('click', event => {
-  portfolio
-    .querySelectorAll('.portfolio-item img')
-    .forEach(el => el.classList.remove('active'));
-  event.target.classList.add('active');
-});
-
 // Portfolio. Переключение табов
-const tags = document.getElementById('tags');
-const portfolioItems = portfolio.getElementsByClassName('portfolio-item');
+const tags = document.querySelectorAll('.tag');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-tags.addEventListener('click', event => {
-  tags.querySelectorAll('.tag').forEach(el => el.classList.remove('active'));
-  event.target.classList.add('active');
+for (const tag of tags) {
+  tag.addEventListener('click', event => {
+    tags.forEach(el => el.classList.remove('active'));
+    event.target.classList.add('active');
 
-  for (const portfolioItem of portfolioItems) {
-    portfolioItem.style.order = Math.floor(
-      Math.random() * portfolioItems.length,
+    portfolioItems.forEach(
+      el =>
+        (el.style.order = Math.floor(Math.random() * portfolioItems.length)),
     );
-  }
-});
+  });
+}
+
+// Portfolio. Взаимодействие с картинками
+const portfolioImages = document.querySelectorAll('.portfolio-item img');
+
+for (const portfolioImage of portfolioImages) {
+  portfolioImage.addEventListener('click', event => {
+    portfolioImages.forEach(el => el.classList.remove('active'));
+    event.target.classList.add('active');
+  });
+}
 
 // Get a quote
 const contactForm = document.getElementById('contact-form');
@@ -106,8 +107,8 @@ contactForm.addEventListener('submit', event => {
       ? 'Описание: ' + contactMessage
       : 'Без описания';
     document.getElementById('info-block').style.display = 'block';
+    contactForm.reset();
   }
-  contactForm.reset();
 });
 
 const okButton = document.getElementById('ok-button');
