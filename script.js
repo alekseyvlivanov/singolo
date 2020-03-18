@@ -1,12 +1,27 @@
 // Header
+const marginTop = 95;
 const menuItems = document.querySelectorAll('.menu a');
+const sections = document.querySelectorAll('section');
 
-for (const menuItem of menuItems) {
-  menuItem.addEventListener('click', event => {
-    menuItems.forEach(el => el.classList.remove('active'));
-    event.target.classList.add('active');
+document.addEventListener('scroll', () => {
+  const curPos = window.scrollY;
+
+  sections.forEach(el => {
+    if (
+      el.offsetTop - marginTop <= curPos &&
+      el.offsetTop + el.offsetHeight > curPos
+    ) {
+      menuItems.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href').substring(1) === el.getAttribute('id')) {
+          a.classList.add('active');
+        }
+      });
+    }
   });
-}
+});
+
+window.scrollTo(0, 0);
 
 // Slider. Переключение слайдов
 const showSlides = n => {
