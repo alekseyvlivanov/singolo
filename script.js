@@ -99,8 +99,12 @@ const portfolioImages = document.querySelectorAll('.portfolio-item img');
 
 for (const portfolioImage of portfolioImages) {
   portfolioImage.addEventListener('click', event => {
-    portfolioImages.forEach(el => el.classList.remove('active'));
-    event.target.classList.add('active');
+    if (portfolioImage.classList.contains('active')) {
+      portfolioImage.classList.remove('active');
+    } else {
+      portfolioImages.forEach(el => el.classList.remove('active'));
+      event.target.classList.add('active');
+    }
   });
 }
 
