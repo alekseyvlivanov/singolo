@@ -82,13 +82,15 @@ const portfolioItems = document.querySelectorAll('.portfolio-item');
 
 for (const tag of tags) {
   tag.addEventListener('click', event => {
-    tags.forEach(el => el.classList.remove('active'));
-    event.target.classList.add('active');
+    if (!tag.classList.contains('active')) {
+      tags.forEach(el => el.classList.remove('active'));
+      event.target.classList.add('active');
 
-    portfolioItems.forEach(
-      el =>
-        (el.style.order = Math.floor(Math.random() * portfolioItems.length)),
-    );
+      portfolioItems.forEach(
+        el =>
+          (el.style.order = Math.floor(Math.random() * portfolioItems.length)),
+      );
+    }
   });
 }
 
