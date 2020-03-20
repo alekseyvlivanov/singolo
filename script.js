@@ -24,56 +24,87 @@ document.addEventListener('scroll', () => {
 window.scrollTo(0, 0);
 
 // Slider. Переключение слайдов
-const showSlides = n => {
-  const slides = document.querySelectorAll('.slide');
-  if (n > slides.length) {
-    slideIndex = 1;
+const carouselSlider = document.querySelector('.carousel-slider');
+const carouselDivs = document.querySelectorAll('.carousel-slider > div');
+const carouselLength = carouselDivs.length;
+
+const chevLeft = document.querySelector('#chev-left');
+const chevRight = document.querySelector('#chev-right');
+
+let counter = 1;
+const size = carouselDivs[0].clientWidth;
+
+carouselSlider.style.transform = 'translateX(' + -size * counter + 'px';
+
+chevLeft.addEventListener('click', () => {
+  if (counter <= 0) return;
+  carouselSlider.style.transition = 'transform 0.5s ease-in-out';
+  counter -= 1;
+  carouselSlider.style.transform = 'translateX(' + -size * counter + 'px';
+});
+
+chevRight.addEventListener('click', () => {
+  if (counter >= carouselLength - 1) return;
+  carouselSlider.style.transition = 'transform 0.5s ease-in-out';
+  counter += 1;
+  carouselSlider.style.transform = 'translateX(' + -size * counter + 'px';
+});
+
+carouselSlider.addEventListener('transitionend', () => {
+  if (counter === 0) {
+    carouselSlider.style.transition = 'none';
+    counter = carouselLength - 2;
+    carouselSlider.style.transform = 'translateX(' + -size * counter + 'px';
   }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';
-  }
-  slides[slideIndex - 1].style.display = 'block';
-};
-
-let slideIndex = 1;
-showSlides(1);
-
-const plusSlides = n => {
-  showSlides((slideIndex += n));
-};
-
-const chevLeft = document.getElementById('chev-left');
-const chevRight = document.getElementById('chev-right');
-
-chevLeft.addEventListener('click', () => plusSlides(-1));
-chevRight.addEventListener('click', () => plusSlides(1));
-
-// Slider. Активация экранов телефонов
-const iphoneVertical = document.getElementById('iphone-vertical');
-const iphoneHorizontal = document.getElementById('iphone-horizontal');
-
-const iphoneVerticalBlack = document.getElementById('iphone-vertical-black');
-const iphoneHorizontalBlack = document.getElementById(
-  'iphone-horizontal-black',
-);
-
-iphoneVertical.addEventListener('click', () => {
-  if (iphoneVerticalBlack.style.display === 'block') {
-    iphoneVerticalBlack.style.display = 'none';
-  } else {
-    iphoneVerticalBlack.style.display = 'block';
+  if (counter === carouselLength - 1) {
+    carouselSlider.style.transition = 'none';
+    counter = 1;
+    carouselSlider.style.transform = 'translateX(' + -size * counter + 'px';
   }
 });
 
-iphoneHorizontal.addEventListener('click', () => {
-  if (iphoneHorizontalBlack.style.display === 'block') {
-    iphoneHorizontalBlack.style.display = 'none';
-  } else {
-    iphoneHorizontalBlack.style.display = 'block';
-  }
+// Slider. Активация экранов телефонов
+const iphoneVertDivs = document.querySelectorAll('.iphoneVertDiv');
+const iphoneHorDivs = document.querySelectorAll('.iphoneHorDiv');
+
+const iphoneVerticalBlacks = document.querySelectorAll(
+  '.iphone-vertical-black',
+);
+const iphoneHorizontalBlacks = document.querySelectorAll(
+  '.iphone-horizontal-black',
+);
+
+let displayVerticalBlacks = false;
+let displayHorizontalBlacks = false;
+
+iphoneVertDivs.forEach(iphoneVertDiv => {
+  iphoneVertDiv.addEventListener('click', () => {
+    if (displayVerticalBlacks) {
+      iphoneVerticalBlacks.forEach(iphoneVerticalBlack => {
+        iphoneVerticalBlack.style.display = 'none';
+      });
+    } else {
+      iphoneVerticalBlacks.forEach(iphoneVerticalBlack => {
+        iphoneVerticalBlack.style.display = 'block';
+      });
+    }
+    displayVerticalBlacks = !displayVerticalBlacks;
+  });
+});
+
+iphoneHorDivs.forEach(iphoneHorDiv => {
+  iphoneHorDiv.addEventListener('click', () => {
+    if (displayHorizontalBlacks) {
+      iphoneHorizontalBlacks.forEach(iphoneHorizontalBlack => {
+        iphoneHorizontalBlack.style.display = 'none';
+      });
+    } else {
+      iphoneHorizontalBlacks.forEach(iphoneHorizontalBlack => {
+        iphoneHorizontalBlack.style.display = 'block';
+      });
+    }
+    displayHorizontalBlacks = !displayHorizontalBlacks;
+  });
 });
 
 // Portfolio. Переключение табов
@@ -82,13 +113,15 @@ const portfolioItems = document.querySelectorAll('.portfolio-item');
 
 for (const tag of tags) {
   tag.addEventListener('click', event => {
-    tags.forEach(el => el.classList.remove('active'));
-    event.target.classList.add('active');
+    if (!tag.classList.contains('active')) {
+      tags.forEach(el => el.classList.remove('active'));
+      event.target.classList.add('active');
 
-    portfolioItems.forEach(
-      el =>
-        (el.style.order = Math.floor(Math.random() * portfolioItems.length)),
-    );
+      portfolioItems.forEach(
+        el =>
+          (el.style.order = Math.floor(Math.random() * portfolioItems.length)),
+      );
+    }
   });
 }
 
@@ -97,39 +130,43 @@ const portfolioImages = document.querySelectorAll('.portfolio-item img');
 
 for (const portfolioImage of portfolioImages) {
   portfolioImage.addEventListener('click', event => {
-    portfolioImages.forEach(el => el.classList.remove('active'));
-    event.target.classList.add('active');
+    if (portfolioImage.classList.contains('active')) {
+      portfolioImage.classList.remove('active');
+    } else {
+      portfolioImages.forEach(el => el.classList.remove('active'));
+      event.target.classList.add('active');
+    }
   });
 }
 
 // Get a quote
-const contactForm = document.getElementById('contact-form');
+const contactForm = document.querySelector('#contact-form');
 
 contactForm.addEventListener('submit', event => {
   event.preventDefault();
   if (contactForm.checkValidity()) {
     const contactSubject = document
-      .getElementById('contact-subject')
+      .querySelector('#contact-subject')
       .value.trim();
     const contactMessage = document
-      .getElementById('contact-message')
+      .querySelector('#contact-message')
       .value.trim();
 
-    document.getElementById('info-subject').innerText = contactSubject
+    document.querySelector('#info-subject').innerText = contactSubject
       ? 'Тема: ' + contactSubject
       : 'Без темы';
-    document.getElementById('info-text').innerText = contactMessage
+    document.querySelector('#info-text').innerText = contactMessage
       ? 'Описание: ' + contactMessage
       : 'Без описания';
-    document.getElementById('info-block').style.display = 'block';
+    document.querySelector('#info-block').style.display = 'block';
     contactForm.reset();
   }
 });
 
-const okButton = document.getElementById('ok-button');
+const okButton = document.querySelector('#ok-button');
 
 okButton.addEventListener('click', () => {
-  document.getElementById('info-block').style.display = 'none';
-  document.getElementById('info-subject').innerText = '';
-  document.getElementById('info-text').innerText = '';
+  document.querySelector('#info-block').style.display = 'none';
+  document.querySelector('#info-subject').innerText = '';
+  document.querySelector('#info-text').innerText = '';
 });
