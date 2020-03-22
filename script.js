@@ -21,7 +21,7 @@ document.addEventListener('scroll', () => {
   });
 });
 
-// window.scrollTo(0, 0);
+window.scrollTo(0, 0);
 
 // Slider. Переключение слайдов
 const carouselSlider = document.querySelector('.carousel-slider');
@@ -32,7 +32,7 @@ const chevLeft = document.querySelector('#chev-left');
 const chevRight = document.querySelector('#chev-right');
 
 let counter = 1;
-const size = carouselDivs[0].clientWidth;
+let size = carouselDivs[0].clientWidth;
 
 carouselSlider.style.transform = 'translateX(' + -size * counter + 'px';
 
@@ -105,6 +105,12 @@ iphoneHorDivs.forEach(iphoneHorDiv => {
     }
     displayHorizontalBlacks = !displayHorizontalBlacks;
   });
+});
+
+window.addEventListener('resize', () => {
+  carouselSlider.style.transition = 'none';
+  size = carouselDivs[0].clientWidth;
+  carouselSlider.style.transform = 'translateX(' + -size * counter + 'px';
 });
 
 // Portfolio. Переключение табов

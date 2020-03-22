@@ -20,11 +20,6 @@ body {
   line-height: 2.6rem;
 }
 
-.container {
-  max-width: 1020px;
-  margin: 0 auto;
-}
-
 a {
   text-decoration: none;
 }
@@ -33,9 +28,15 @@ li {
   list-style: none;
 }
 
+.container {
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
 /* Header */
 #header {
-  position: fixed;
+  position: sticky;
   top: 0;
   height: 95px;
   width: 100%;
@@ -76,9 +77,19 @@ li {
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.4rem;
-  padding-top: 10px;
+  margin-top: 10px;
   text-transform: uppercase;
-  width: 375px;
+}
+
+.menu-item::after {
+  content: '·';
+  color: #494e62;
+  padding: 0 13.8px;
+}
+
+.menu-item:last-child::after {
+  content: '';
+  padding: 0;
 }
 
 .menu-item a {
@@ -90,20 +101,16 @@ li {
   color: #f06c64;
 }
 
-.menu-dot {
-  color: #494e62;
-}
-
 /* Slider Section */
 #home {
   position: relative;
   height: 600px;
   width: 100%;
-  margin-top: 95px;
   scroll-margin-top: 95px;
 }
 
 .carousel-container {
+  position: relative;
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -183,7 +190,7 @@ li {
   top: 53px;
   left: 112px;
   border-radius: 27px;
-  box-shadow: 25px 25px 5px 0px #ce5d56;
+  box-shadow: 25px 25px 2px 0px #ce5d56;
   cursor: pointer;
 }
 
@@ -191,8 +198,8 @@ li {
 .iphone-vertical-black {
   display: none;
   position: absolute;
-  left: 126px;
   top: 118px;
+  left: 126px;
   height: 333px;
   width: 188px;
   background-color: #000000;
@@ -205,7 +212,7 @@ li {
   top: 174px;
   left: 425px;
   border-radius: 27px;
-  box-shadow: 25px 25px 5px 0px #ce5d56;
+  box-shadow: 25px 25px 2px 0px #ce5d56;
   cursor: pointer;
 }
 
@@ -213,8 +220,8 @@ li {
 .iphone-horizontal-black {
   display: none;
   position: absolute;
-  left: 485px;
   top: 188px;
+  left: 485px;
   height: 188px;
   width: 333px;
   background-color: #000000;
@@ -223,7 +230,6 @@ li {
 
 /* Services Section */
 #services {
-  height: 500px;
   background-color: #f2f2f2;
   border-bottom: 6px solid #ffffff;
   scroll-margin-top: 50px;
@@ -251,7 +257,7 @@ li {
 
 .services-grid {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
   padding: 60px 40px 52px 40px;
 }
@@ -287,7 +293,6 @@ li {
 
 /* Portfolio Section */
 #portfolio {
-  height: 870px;
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
   scroll-margin-top: 50px;
@@ -337,14 +342,14 @@ li {
 
 .portfolio-grid {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 2rem;
   grid-template-columns: repeat(4, 1fr);
   padding: 18px 40px 74px 40px;
 }
 
 .portfolio-item {
-  height: 187px;
-  width: 220px;
+  height: 100%;
+  width: 100%;
 }
 
 .portfolio-item:nth-child(n + 13) {
@@ -352,18 +357,20 @@ li {
 }
 
 .portfolio-item img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
   cursor: pointer;
 }
 
 .portfolio-item img.active,
 .portfolio-item img:hover {
-  border: 5px dashed #f06c64;
-  margin: -5px;
+  outline: 5px dashed #f06c64;
 }
 
 /* About Section */
 #about {
-  height: 733px;
   background-color: #f2f2f2;
   border-bottom: 5px solid #ffffff;
   scroll-margin-top: 50px;
@@ -391,22 +398,33 @@ li {
 
 .about-grid {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
-  padding: 57px 40px 0 40px;
+  padding: 57px 40px 68px 40px;
+  /* overflow: hidden; */
 }
 
 .about-item {
   display: flex;
   flex-direction: column;
+  /* height: 100%;
+  width: 100%; */
 }
 
 .about-item-img {
-  height: 300px;
-  width: 300px;
+  height: 100%;
+  width: 100%;
+}
+
+.about-item-img img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .about-item-text {
+  height: 100%;
   margin-top: 17px;
 }
 
@@ -476,7 +494,6 @@ li {
 
 /* Contact Section */
 #contact {
-  height: 654px;
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
   scroll-margin-top: 50px;
@@ -496,7 +513,7 @@ li {
 .contact-title p {
   font-size: 1.8rem;
   font-weight: 300;
-  line-height: 2.4rem;
+  line-height: 3rem;
   text-align: justify;
   color: #f0d8d9;
   margin-top: 14px;
@@ -708,17 +725,109 @@ footer {
   padding: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1019px) {
+  #home {
+    height: 452px;
+  }
+  .slide-2 img {
+    height: 80%;
+  }
+
+  /* TODO */
+  .iphone-vertical {
+    height: 344.26px;
+    width: 162.36px;
+    top: 40.59px;
+    left: 11%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 2px 0px #ce5d56;
+  }
+
+  /* TODO */
+  .iphone-vertical-black {
+    top: 89px;
+    left: calc(11% + 10px);
+    height: 251px;
+    width: 143px;
+  }
+
+  /* TODO */
+  .iphone-horizontal {
+    height: 162.36px;
+    width: 344.26px;
+    top: 133.43px;
+    left: 42%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 2px 0px #ce5d56;
+  }
+
+  /* TODO */
+  .iphone-horizontal-black {
+    top: 143px;
+    left: calc(42% + 45px);
+    height: 144px;
+    width: 251px;
+  }
+
+  .services-title {
+    padding-top: 39px;
+  }
+
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 5.3rem;
+    row-gap: 3.9rem;
+    padding-top: 28px;
+    padding-bottom: 58px;
   }
 
   .portfolio-grid {
     grid-template-columns: repeat(3, 1fr);
+    padding-top: 28px;
+    padding-bottom: 67px;
+  }
+
+  .contact-title {
+    padding-top: 53px;
+  }
+
+  .contact-content {
+    padding-top: 19px;
+    padding-bottom: 39px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    margin-bottom: 12px;
+  }
+
+  .contact-form textarea {
+    margin-bottom: 17px;
+  }
+
+  .contact-info {
+    margin-left: 29px;
+  }
+
+  .contact-info p {
+    margin-top: 5px;
+  }
+
+  .contact-info-links {
+    margin-top: 5px;
+  }
+
+  .about-title {
+    padding-top: 52px;
+  }
+
+  .about-grid {
+    grid-gap: 1.45rem;
+    padding-top: 28px;
   }
 }
 
-@media (max-width: 375px) {
+/* @media (max-width: 767px) {
   #header {
     height: 71px;
     border-bottom: 3.35px solid #323746;
@@ -744,4 +853,4 @@ footer {
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+} */
