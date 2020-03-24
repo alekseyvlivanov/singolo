@@ -901,8 +901,12 @@ footer {
     height: 80%;
   }
 
-  .chev {
-    display: none;
+  .chev-left {
+    left: 2%;
+  }
+
+  .chev-right {
+    right: 2%;
   }
 
   /* TODO */
