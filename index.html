@@ -11,6 +11,11 @@
   <body>
     <div class="container">
       <header id="header">
+        <div class="toggle">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
         <nav id="navbar">
           <h1 class="logo">Singolo</h1>
           <ul class="menu">
@@ -309,14 +314,14 @@
             <input
               type="text"
               name="name"
-              maxlength="80"
+              maxlength="50"
               placeholder="Name (Required)"
               required
             />
             <input
               type="email"
               name="email"
-              maxlength="80"
+              maxlength="50"
               placeholder="Email (Required)"
               required
             />
@@ -324,13 +329,13 @@
               id="contact-subject"
               type="text"
               name="subject"
-              maxlength="80"
+              maxlength="50"
               placeholder="Subject"
             />
             <textarea
               id="contact-message"
               name="message"
-              maxlength="600"
+              maxlength="500"
               placeholder="Describe your project in detail..."
             ></textarea>
             <button id="contact-button" type="submit" name="submit">
@@ -382,9 +387,9 @@
 
     <div id="info-block">
       <div id="info-message">
-        <p class="modal-title">Письмо отправлено</p>
-        <p id="info-subject" class="modal-text"></p>
-        <p id="info-text" class="modal-text"></p>
+        <div class="modal-title">Письмо отправлено</div>
+        <div id="info-subject" class="modal-text"></div>
+        <div id="info-text" class="modal-text"></div>
         <button id="ok-button">OK</button>
       </div>
     </div>

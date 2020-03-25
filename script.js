@@ -21,7 +21,7 @@ document.addEventListener('scroll', () => {
   });
 });
 
-// window.scrollTo(0, 0);
+window.scrollTo(0, 0);
 
 // Slider. Переключение слайдов
 const carouselSlider = document.querySelector('.carousel-slider');
@@ -165,6 +165,7 @@ contactForm.addEventListener('submit', event => {
       ? 'Описание: ' + contactMessage
       : 'Без описания';
     document.querySelector('#info-block').style.display = 'block';
+    document.querySelector('#info-message').style.display = 'block';
     contactForm.reset();
   }
 });
@@ -173,6 +174,21 @@ const okButton = document.querySelector('#ok-button');
 
 okButton.addEventListener('click', () => {
   document.querySelector('#info-block').style.display = 'none';
+  document.querySelector('#info-message').style.display = 'none';
   document.querySelector('#info-subject').innerText = '';
   document.querySelector('#info-text').innerText = '';
+});
+
+// Hamburger menu
+const toggle = document.querySelector('.toggle');
+const logo = document.querySelector('.logo');
+const navbar = document.querySelector('#navbar');
+const menu = document.querySelector('.menu');
+
+toggle.addEventListener('click', () => {
+  document.querySelector('#info-block').classList.toggle('burger');
+  toggle.classList.toggle('burger');
+  logo.classList.toggle('burger');
+  navbar.classList.toggle('burger');
+  menu.classList.toggle('burger');
 });
