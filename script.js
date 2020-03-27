@@ -116,6 +116,7 @@ window.addEventListener('resize', () => {
 // Portfolio. Переключение табов
 const tags = document.querySelectorAll('.tag');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
+const portfolioGrid = document.querySelector('.portfolio-grid');
 
 for (const tag of tags) {
   tag.addEventListener('click', event => {
@@ -123,10 +124,19 @@ for (const tag of tags) {
       tags.forEach(el => el.classList.remove('active'));
       event.target.classList.add('active');
 
-      portfolioItems.forEach(
-        el =>
-          (el.style.order = Math.floor(Math.random() * portfolioItems.length)),
-      );
+      for (let i = portfolioItems.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * i);
+        const temp = document.createElement('div');
+
+        portfolioItems[i].parentNode.insertBefore(temp, portfolioItems[i]);
+        portfolioItems[j].parentNode.insertBefore(
+          portfolioItems[i],
+          portfolioItems[j],
+        );
+
+        temp.parentNode.insertBefore(portfolioItems[j], temp);
+        temp.parentNode.removeChild(temp);
+      }
     }
   });
 }
