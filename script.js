@@ -173,11 +173,11 @@ contactForm.addEventListener('submit', event => {
       .value.trim();
 
     infoSubject.innerText = contactSubject
-      ? 'Тема: ' + contactSubject
-      : 'Без темы';
+      ? 'Subject: ' + contactSubject
+      : 'No subject';
     infoText.innerText = contactMessage
-      ? 'Описание: ' + contactMessage
-      : 'Без описания';
+      ? 'Description: ' + contactMessage
+      : 'No description';
     infoBlock.style.display = 'block';
     infoMessage.style.display = 'block';
     contactForm.reset();
