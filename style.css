@@ -71,6 +71,7 @@ li {
   justify-content: space-between;
   height: 100%;
   padding: 0 40px;
+  transition-duration: 0.2s;
 }
 
 .logo {
@@ -80,6 +81,7 @@ li {
   letter-spacing: -0.03em;
   line-height: 3rem;
   text-transform: uppercase;
+  transition-duration: 0.2s;
 }
 
 .logo::after {

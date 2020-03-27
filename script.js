@@ -157,6 +157,10 @@ for (const portfolioImage of portfolioImages) {
 
 // Get a quote
 const contactForm = document.querySelector('#contact-form');
+const infoBlock = document.querySelector('#info-block');
+const infoMessage = document.querySelector('#info-message');
+const infoSubject = document.querySelector('#info-subject');
+const infoText = document.querySelector('#info-text');
 
 contactForm.addEventListener('submit', event => {
   event.preventDefault();
@@ -168,14 +172,14 @@ contactForm.addEventListener('submit', event => {
       .querySelector('#contact-message')
       .value.trim();
 
-    document.querySelector('#info-subject').innerText = contactSubject
+    infoSubject.innerText = contactSubject
       ? 'Тема: ' + contactSubject
       : 'Без темы';
-    document.querySelector('#info-text').innerText = contactMessage
+    infoText.innerText = contactMessage
       ? 'Описание: ' + contactMessage
       : 'Без описания';
-    document.querySelector('#info-block').style.display = 'block';
-    document.querySelector('#info-message').style.display = 'block';
+    infoBlock.style.display = 'block';
+    infoMessage.style.display = 'block';
     contactForm.reset();
   }
 });
@@ -183,10 +187,10 @@ contactForm.addEventListener('submit', event => {
 const okButton = document.querySelector('#ok-button');
 
 okButton.addEventListener('click', () => {
-  document.querySelector('#info-block').style.display = 'none';
-  document.querySelector('#info-message').style.display = 'none';
-  document.querySelector('#info-subject').innerText = '';
-  document.querySelector('#info-text').innerText = '';
+  infoBlock.style.display = 'none';
+  infoMessage.style.display = 'none';
+  infoSubject.innerText = '';
+  infoText.innerText = '';
 });
 
 // Hamburger menu
@@ -194,11 +198,22 @@ const toggle = document.querySelector('.toggle');
 const logo = document.querySelector('.logo');
 const navbar = document.querySelector('#navbar');
 const menu = document.querySelector('.menu');
+const links = document.querySelectorAll('.menu a');
 
 toggle.addEventListener('click', () => {
-  document.querySelector('#info-block').classList.toggle('burger');
+  infoBlock.classList.toggle('burger');
   toggle.classList.toggle('burger');
   logo.classList.toggle('burger');
   navbar.classList.toggle('burger');
   menu.classList.toggle('burger');
+});
+
+for (const link of links) {
+  link.addEventListener('click', () => {
+    toggle.click();
+  });
+}
+
+infoBlock.addEventListener('click', () => {
+  toggle.click();
 });
