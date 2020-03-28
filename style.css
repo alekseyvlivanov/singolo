@@ -1070,8 +1070,7 @@ footer {
 
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 13px;
-    row-gap: 14px;
+    grid-gap: 14px;
     padding: 25px 30px 42px 30px;
   }
 
