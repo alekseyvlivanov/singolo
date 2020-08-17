@@ -6,8 +6,6 @@ You can see this project in action:
 
 - Netlify - <https://singolo.chessiah.com>
 
-- [Part 1](https://alekseyvlivanov.github.io/singolo/singolo1.html)
-- [Part 2](https://alekseyvlivanov.github.io/singolo/singolo2.html)
-- [Part 3](https://alekseyvlivanov.github.io/singolo/singolo3.html)
+Task:
 
-[Final version](https://alekseyvlivanov.github.io/singolo/index.html)
+- <https://github.com/rolling-scopes-school/tasks/tree/master/tasks/markups/level-2/singolo>
