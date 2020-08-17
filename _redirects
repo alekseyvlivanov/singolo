@@ -1,0 +1,6 @@
+# Netlify redirects
+
+https://singolo-chessiah.netlify.app/* https://singolo.chessiah.com/:splat 301!
+http://singolo-chessiah.netlify.app/* https://singolo.chessiah.com/:splat 301!
+
+http://singolo.chessiah.com/* https://singolo.chessiah.com/:splat 301!
