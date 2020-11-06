@@ -1,0 +1,30 @@
+{
+  "name": "singolo",
+  "version": "1.0.0",
+  "description": "Singolo landing page",
+  "private": "true",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html --out-dir dist --public-url /singolo --no-content-hash"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alekseyvlivanov/singolo.git"
+  },
+  "keywords": [
+    "singolo",
+    "landing",
+    "page"
+  ],
+  "author": "Aleksey Ivanov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alekseyvlivanov/singolo/issues"
+  },
+  "homepage": "https://github.com/alekseyvlivanov/singolo#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-nuke-dist": "^1.0.1",
+    "parcel-plugin-static-files-copy": "^2.5.0"
+  }
+}

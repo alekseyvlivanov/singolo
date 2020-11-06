@@ -1,1 +1,4 @@
-.vscode/
+.cache
+.vscode
+dist
+node_modules

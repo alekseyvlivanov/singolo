@@ -6,12 +6,12 @@ const sections = document.querySelectorAll('section');
 document.addEventListener('scroll', () => {
   const curPos = window.scrollY;
 
-  sections.forEach(el => {
+  sections.forEach((el) => {
     if (
       el.offsetTop - marginTop <= curPos &&
       el.offsetTop + el.offsetHeight > curPos
     ) {
-      menuItems.forEach(a => {
+      menuItems.forEach((a) => {
         a.classList.remove('active');
         if (a.getAttribute('href').substring(1) === el.getAttribute('id')) {
           a.classList.add('active');
@@ -77,14 +77,14 @@ const iphoneHorizontalBlacks = document.querySelectorAll(
 let displayVerticalBlacks = false;
 let displayHorizontalBlacks = false;
 
-iphoneVertDivs.forEach(iphoneVertDiv => {
+iphoneVertDivs.forEach((iphoneVertDiv) => {
   iphoneVertDiv.addEventListener('click', () => {
     if (displayVerticalBlacks) {
-      iphoneVerticalBlacks.forEach(iphoneVerticalBlack => {
+      iphoneVerticalBlacks.forEach((iphoneVerticalBlack) => {
         iphoneVerticalBlack.style.display = 'none';
       });
     } else {
-      iphoneVerticalBlacks.forEach(iphoneVerticalBlack => {
+      iphoneVerticalBlacks.forEach((iphoneVerticalBlack) => {
         iphoneVerticalBlack.style.display = 'block';
       });
     }
@@ -92,14 +92,14 @@ iphoneVertDivs.forEach(iphoneVertDiv => {
   });
 });
 
-iphoneHorDivs.forEach(iphoneHorDiv => {
+iphoneHorDivs.forEach((iphoneHorDiv) => {
   iphoneHorDiv.addEventListener('click', () => {
     if (displayHorizontalBlacks) {
-      iphoneHorizontalBlacks.forEach(iphoneHorizontalBlack => {
+      iphoneHorizontalBlacks.forEach((iphoneHorizontalBlack) => {
         iphoneHorizontalBlack.style.display = 'none';
       });
     } else {
-      iphoneHorizontalBlacks.forEach(iphoneHorizontalBlack => {
+      iphoneHorizontalBlacks.forEach((iphoneHorizontalBlack) => {
         iphoneHorizontalBlack.style.display = 'block';
       });
     }
@@ -119,9 +119,9 @@ const portfolioItems = document.querySelectorAll('.portfolio-item');
 const portfolioGrid = document.querySelector('.portfolio-grid');
 
 for (const tag of tags) {
-  tag.addEventListener('click', event => {
+  tag.addEventListener('click', (event) => {
     if (!tag.classList.contains('active')) {
-      tags.forEach(el => el.classList.remove('active'));
+      tags.forEach((el) => el.classList.remove('active'));
       event.target.classList.add('active');
 
       for (let i = portfolioItems.length - 1; i > 0; i -= 1) {
@@ -145,11 +145,11 @@ for (const tag of tags) {
 const portfolioImages = document.querySelectorAll('.portfolio-item img');
 
 for (const portfolioImage of portfolioImages) {
-  portfolioImage.addEventListener('click', event => {
+  portfolioImage.addEventListener('click', (event) => {
     if (portfolioImage.classList.contains('active')) {
       portfolioImage.classList.remove('active');
     } else {
-      portfolioImages.forEach(el => el.classList.remove('active'));
+      portfolioImages.forEach((el) => el.classList.remove('active'));
       event.target.classList.add('active');
     }
   });
@@ -162,7 +162,7 @@ const infoMessage = document.querySelector('#info-message');
 const infoSubject = document.querySelector('#info-subject');
 const infoText = document.querySelector('#info-text');
 
-contactForm.addEventListener('submit', event => {
+contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
   if (contactForm.checkValidity()) {
     const contactSubject = document
