@@ -29,7 +29,7 @@ and deploy somewhere your new **dist** folder.
 
 - [Figma (cloud)](https://www.figma.com/file/HfBfQdMpn9X9FMPeocJGis/Singolo)
 
-- [Figma (local)](singolo.fig)
+- [Figma (local)](Singolo.fig)
 
 ## Demo:
 
