@@ -4,9 +4,9 @@
 
 This is a small landing page for some fictional company.
 
-#### DEMO - https://singolo.chessiah.com
+#### DEMO - https://singolo.aleksey-vl-ivanov.com
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c959373f-1114-4cac-9db2-b7dd772a36e3/deploy-status)](https://app.netlify.com/sites/singolo-chessiah/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f4905c7a-e5c8-49eb-bc9e-d006add22e7a/deploy-status)](https://app.netlify.com/sites/zen-shaw-9af0cd/deploys)
 
 ## Features
 
