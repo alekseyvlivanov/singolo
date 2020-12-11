@@ -32,10 +32,10 @@ $ npm install
 $ npm run dev
 ```
 
-and open http://localhost:1234 in your browser, or
+and open http://localhost:8080 in your browser, or
 
 ```
 $ npm run build
 ```
 
-and deploy somewhere your new **dist** folder.
+and deploy somewhere your new **build** folder.

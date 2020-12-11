@@ -4,8 +4,9 @@
   "description": "Singolo landing page",
   "private": "true",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --out-dir dist --no-content-hash"
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "prebuild": "rimraf build"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,9 @@
   },
   "homepage": "https://github.com/alekseyvlivanov/singolo#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-nuke-dist": "^1.0.1"
+    "@snowpack/plugin-optimize": "^0.2.10",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2",
+    "snowpack": "^2.18.2"
   }
 }
