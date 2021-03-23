@@ -29,7 +29,7 @@ $ npm install
 ## Usage
 
 ```
-$ npm run dev
+$ npm run start
 ```
 
 and open http://localhost:8080 in your browser, or
