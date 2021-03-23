@@ -24,9 +24,7 @@
   },
   "homepage": "https://github.com/alekseyvlivanov/singolo#readme",
   "devDependencies": {
-    "@snowpack/plugin-optimize": "^0.2.10",
-    "mkdirp": "^1.0.4",
     "rimraf": "^3.0.2",
-    "snowpack": "^2.18.2"
+    "snowpack": "^3.1.2"
   }
 }
