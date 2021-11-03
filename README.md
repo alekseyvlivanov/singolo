@@ -6,8 +6,6 @@ This is a small landing page for some fictional company.
 
 #### DEMO - https://singolo.aleksey-vl-ivanov.com
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f4905c7a-e5c8-49eb-bc9e-d006add22e7a/deploy-status)](https://app.netlify.com/sites/zen-shaw-9af0cd/deploys)
-
 ## Features
 
 - Figma layout - [cloud](https://www.figma.com/file/HfBfQdMpn9X9FMPeocJGis/Singolo), [local](Singolo.fig)
